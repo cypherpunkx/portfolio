@@ -895,7 +895,7 @@ function Contact() {
   return (
     <section ref={contactRef} id="contact" className="my-16">
       <h2 className="text-3xl sm:text-4xl font-extrabold outlined p-2 mb-6">
-        Let's Build Something Together
+        {`Let's Build Something Together`}
       </h2>
       <div className="grid grid-cols-12 gap-4">
         <div className="contact-main col-span-12 lg:col-span-8 outlined p-4">
