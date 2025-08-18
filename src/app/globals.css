@@ -1,26 +1,99 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* Theme tokens (Tailwind v4 @theme API) */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, Helvetica Neue, Arial, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  --color-ink: #111;
+  --color-paper: #fff;
+  --color-muted: #bdbdbd;
+
+  --radius: 0; /* sharp corners */
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Strict 12-col grid overlay on the body background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: calc(100vw / 12) 100%, 100% 32px; /* 12 columns + 32px row height */
+  z-index: 5;
+}
+
+/* Utilities */
+.outlined {
+  outline: 1px solid #000;
+}
+.outlined-soft {
+  outline: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/* Cursor coordinate HUD */
+.cursor-hud {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  mix-blend-mode: difference; /* stays visible */
+}
+
+/* Terminal backdrop in Hero */
+.terminal {
+  font-family: var(--font-mono);
+  background: #111;
+  color: #e5e5e5;
+  border: 1px solid #000;
+  box-shadow: 8px 8px 0 #000;
+}
+
+/* Minimal tooltip */
+.tooltip {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border: 1px solid #000;
+  white-space: nowrap;
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .will-animate {
+    animation: none !important;
+    transition: none !important;
+  }
 }
