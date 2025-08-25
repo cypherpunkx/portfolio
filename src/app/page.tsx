@@ -714,7 +714,11 @@ function Experience() {
       period: 'Maret 2024–Sekarang',
       bullets: [
         'Mengembangkan sistem backend yang efisien dan scalable.',
-        'Implementasi API dengan Go dan framework Gin.',
+        'Implementasi API dengan express.js',
+        'Maintenance server dan troubleshooting sistem.',
+        'Mengelola infrastruktur sistem dan database.',
+        'Dokumentasi API dengan Postman',
+        '',
       ],
     },
     {
@@ -902,9 +906,9 @@ function Contact() {
           <div className="mb-4">
             <h3 className="text-xl font-bold mb-2">Ready to collaborate?</h3>
             <p className="text-base text-gray-700 mb-4">
-              Saya selalu mencari peluang untuk berkolaborasi dalam
-              proyek-proyek menarik. Mari kita diskusikan bagaimana kita bisa
-              membangun sesuatu yang luar biasa bersama!
+              I'm always looking for opportunities to collaborate on exciting
+              projects. Let's discuss how we can build something extraordinary
+              together!
             </p>
           </div>
           <button
@@ -913,7 +917,7 @@ function Contact() {
             aria-label="Contact via WhatsApp"
           >
             {WhatsAppIcon}
-            Chat di WhatsApp
+            Contact via WhatsApp
           </button>
         </div>
 

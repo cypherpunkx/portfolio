@@ -3,8 +3,8 @@ import './globals.css';
 import { mono } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'Brutalist Portfolio',
-  description: 'Monochrome, grid-first brutalist portfolio landing page',
+  title: 'Rafly Mahendra',
+  description: 'Portfolio',
 };
 
 export default function RootLayout({
