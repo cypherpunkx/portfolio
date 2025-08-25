@@ -34,7 +34,7 @@ export default function Page() {
     const setupSectionAnimations = () => {
       // Animate sections on scroll
       const sections = document.querySelectorAll('section');
-      sections.forEach((section, index) => {
+      sections.forEach((section) => {
         gsap.fromTo(
           section,
           {
@@ -715,9 +715,7 @@ function Experience() {
       bullets: [
         'Mengembangkan sistem backend yang efisien dan scalable.',
         'Implementasi API dengan express.js',
-        'Maintenance server dan troubleshooting sistem.',
-        'Mengelola infrastruktur sistem dan database.',
-        'Dokumentasi API dengan Postman',
+        'Mengelola Program Internal',
         '',
       ],
     },
@@ -906,9 +904,9 @@ function Contact() {
           <div className="mb-4">
             <h3 className="text-xl font-bold mb-2">Ready to collaborate?</h3>
             <p className="text-base text-gray-700 mb-4">
-              I'm always looking for opportunities to collaborate on exciting
-              projects. Let's discuss how we can build something extraordinary
-              together!
+              I&apos;m always looking for opportunities to collaborate on
+              exciting projects. Let&apos;s discuss how we can build something
+              extraordinary together!
             </p>
           </div>
           <button
